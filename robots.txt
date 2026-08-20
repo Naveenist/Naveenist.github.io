@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://naveen-o-hiremath.github.io/codearrive.github.io/sitemap.xml

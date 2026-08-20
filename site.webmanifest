@@ -1,0 +1,14 @@
+{
+  "name": "CodeArrive",
+  "short_name": "CodeArrive",
+  "description": "Custom software, enterprise automation, and final-year project mentorship.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/img/logo.png", "sizes": "1036x581", "type": "image/png" }
+  ]
+}
