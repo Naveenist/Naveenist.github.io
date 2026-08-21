@@ -184,7 +184,10 @@ p {
 
 .display {
   font-size: var(--t-display);
-  line-height: 1.04;
+  /* Still tighter than the 1.15 the headings use - it is display type at
+     4.75rem - but 1.04 stacked the lines closer than the font's own 1.26em
+     content area, so descenders ran into the line below. */
+  line-height: 1.12;
   letter-spacing: -0.035em;
   font-weight: 800;
 }

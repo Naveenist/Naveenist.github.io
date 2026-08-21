@@ -323,8 +323,18 @@
    `both` fill mode holds the start frame through the delay. */
 
 .reveal-line {
+  /* The mask has to clear the descenders. Plus Jakarta Sans carries a 1.26em
+     content area, so at any display line-height below that the tails of g/y/p
+     hang outside the line box - and this overflow:hidden would crop them flat.
+     Pad the mask past them, then pull the extra height back out of the flow so
+     the leading is exactly what line-height asked for. 0.18em also clears the
+     roomier fallbacks (Segoe UI et al) if the webfont never arrives. */
+  --descender-room: 0.18em;
+
   display: block;
   overflow: hidden;
+  padding-bottom: var(--descender-room);
+  margin-bottom: calc(var(--descender-room) * -1);
 }
 
 .reveal-line > span {
@@ -334,7 +344,9 @@
 }
 
 @keyframes line-rise {
-  from { transform: translateY(105%); }
+  /* Starts below the padded mask edge rather than the line box, or the top of
+     the rising line would show through the descender gap before its turn. */
+  from { transform: translateY(calc(105% + var(--descender-room))); }
 }
 
 .fade-up {
